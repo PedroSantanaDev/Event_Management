@@ -59,11 +59,29 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Migrations\201812060311036_Initial.cs" />
+    <Compile Include="Migrations\201812060311036_Initial.Designer.cs">
+      <DependentUpon>201812060311036_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812060345381_new-col.cs" />
+    <Compile Include="Migrations\201812060345381_new-col.Designer.cs">
+      <DependentUpon>201812060345381_new-col.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DbMigrationsConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812060311036_Initial.resx">
+      <DependentUpon>201812060311036_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812060345381_new-col.resx">
+      <DependentUpon>201812060345381_new-col.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

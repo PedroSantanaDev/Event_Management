@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace Events.Data
 {
-    class Event
+    public class Event
     {
         public int Id { get; set; }
         [Required]
         [MaxLength(200)]
         public string Title { get; set; }
         public DateTime StartDateTime { get; }
+        public virtual ICollection<Comment> Comments { get; }
         public TimeSpan? Duration { get; set; }
         public string AuthorId { get; set; }
         public virtual ApplicationUser Author { get; set; }
@@ -26,6 +27,7 @@ namespace Events.Data
         {
             this.IsPublic = true;
             this.StartDateTime = DateTime.Now;
+            this.Comments = new HashSet<Comment>();
         }
     }
 }
