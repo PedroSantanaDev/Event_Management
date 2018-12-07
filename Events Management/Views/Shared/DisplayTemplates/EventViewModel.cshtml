@@ -3,12 +3,12 @@
 <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="event-box">
         <h2>@Model.Title</h2>
-        <span class="date">@Model.StartDateTime</span>
+        <span class="date">Date: @Model.StartDateTime</span>
         @if(Model.Duration != null)
         {
-            <span class="duration">
-                (@Model.Duration.Value.ToString(@"hh\:mm") hours)
-            </span>
+        <span class="duration">
+            Duration: (@Model.Duration.Value.ToString(@"hh\:mm") hours)
+        </span>
         }
         @if(Model.Author != null)
         {

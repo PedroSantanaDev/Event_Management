@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events Management", "Events Management\Events Management.csproj", "{5FCB02A9-9246-4828-94AA-E61F50FED4D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events_Management", "Events Management\Events_Management.csproj", "{5FCB02A9-9246-4828-94AA-E61F50FED4D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.Data", "Events.Data\Events.Data.csproj", "{639B5731-99EE-44F6-AE62-8F34C77C5A29}"
 EndProject
