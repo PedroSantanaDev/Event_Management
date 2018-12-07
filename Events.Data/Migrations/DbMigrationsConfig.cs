@@ -48,9 +48,24 @@ namespace Events.Data.Migrations
 
             context.Events.Add(new Event()
             {
-                Title = "passed Event <Anonymous>",
+                Title = "Passed Event <Anonymous>",
                 StartDateTime = DateTime.Now.Date.AddDays(-2.5).AddHours(5).AddMinutes(2),
                 Duration = TimeSpan.FromHours(.5),
+                Comments = new HashSet<Comment>()
+                {
+                    new Comment() { Text = "<Anonymous> comment"},
+                    new Comment() {
+                        Text = "User comment",
+                        Author = context.Users.First()
+                    }
+                }
+            });
+
+            context.Events.Add(new Event()
+            {
+                Title = "KLK Event <Anonymous>",
+                StartDateTime = DateTime.Now.Date.AddDays(15).AddHours(25).AddMinutes(15),
+                Duration = TimeSpan.FromHours(5),
                 Comments = new HashSet<Comment>()
                 {
                     new Comment() { Text = "<Anonymous> comment"},
