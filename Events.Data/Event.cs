@@ -13,8 +13,8 @@ namespace Events.Data
         [Required]
         [MaxLength(200)]
         public string Title { get; set; }
-        public DateTime StartDateTime { get; }
-        public virtual ICollection<Comment> Comments { get; }
+        public DateTime StartDateTime { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         public TimeSpan? Duration { get; set; }
         public string AuthorId { get; set; }
         public virtual ApplicationUser Author { get; set; }
