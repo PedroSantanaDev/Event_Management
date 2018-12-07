@@ -23,7 +23,7 @@ namespace Events.Data.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            if (!context.Users.Any())
+           /* if (!context.Users.Any())
             {
                 var adminEmail = "admin@domain.com";
                 var adminUserName = adminEmail;
@@ -34,7 +34,12 @@ namespace Events.Data.Migrations
                 CreateAdminUser(context, adminEmail, adminUserName, adminFullName, adminPassword, adminRole);
                 CreateSeveralEvents(context);
 
-            }
+            }*/
+        }
+
+        public void RunSeed(Events.Data.ApplicationDbContext db)
+        {
+            Seed(db);
         }
 
         private void CreateSeveralEvents(ApplicationDbContext context)

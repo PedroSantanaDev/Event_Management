@@ -12,7 +12,6 @@ namespace Events_Management
         public void Configuration(IAppBuilder app)
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
-            ConfigureAuth(app);
         }
     }
 }

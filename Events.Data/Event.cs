@@ -22,7 +22,7 @@ namespace Events.Data
         public string Description { get; set; }
         [MaxLength(200)]
         public string Location { get; set; }
-        public bool IsPublic { get; }
+        public bool IsPublic { get; set; }
 
         public Event()
         {
