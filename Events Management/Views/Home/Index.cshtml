@@ -1,21 +1,12 @@
 ﻿@model Events_Management.Models.UpcomingPassedEventsViewModel
 
 @{
-    ViewBag.Title = "Events";
+    ViewBag.Title = "Public Events";
 }
 
-<h1 class="event-group-heading">Upcoming Events</h1>
+@Html.Partial("_Events")
 
-<div class="row">
-    @if (Model.UpcomingEvents.Any())
-    {
-        @Html.DisplayFor(x => x.UpcomingEvents)
-    }
-    else
-    {
-        <div class="col-md-4 col-sm-6 col-xs-12">No Events</div>
-    }
-</div>
+
 
 @section scripts {
     @Scripts.Render("~/bundles/ajax")

@@ -3,5 +3,10 @@
     ViewBag.Title = "My Events";
 }
 
+@Html.Partial("_Events")
+
 <h2>@ViewBag.Title</h2>
 
+@section scripts {
+    @Scripts.Render("~/bundles/ajax")
+}
