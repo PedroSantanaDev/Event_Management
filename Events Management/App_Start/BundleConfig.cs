@@ -25,6 +25,13 @@ namespace Events_Management
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap-datetimepicker").Include(
+                "~/Scripts/moment.js",
+                "~/Scripts/bootstrap-datetimepicker.js"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap-datetimepicker").Include(
+                "~/Content/boostrap-datetimepicker.min.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

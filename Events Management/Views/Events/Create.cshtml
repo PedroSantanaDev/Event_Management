@@ -58,7 +58,7 @@
             @Html.LabelFor(model => model.IsPublic, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.IsPublic)
+                    @Html.CheckBoxFor(model => model.IsPublic, htmlAttributes: new { @checked = "true"})
                     @Html.ValidationMessageFor(model => model.IsPublic, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -78,3 +78,33 @@
     </div>
 }
 
+@section scripts{
+    @Scripts.Render("~/bundles/bootstrap-datetimepicker")
+    @Scripts.Render("~/bundles/jqueryval")    
+}
+
+@section styles{
+    @Styles.Render("~/Content/bootstrap-datetimepicker")    
+}
+
+
+<script>
+    $(function () {
+        $('#StartDateTime').datetimepicker({
+            format: 'DD-MMM-YYYY HH:mm',
+            sideBySide: true,
+            showTodayButton: true
+        });
+    });
+
+    $(function () {
+        var date = new Date();
+        date.setHours(1);
+        date.setMinutes(0);
+        $('#Duration').datetimepicker({
+            format: 'HH:mm',
+            defaultDate: date,
+            showClear: true
+        });
+    });
+</script>
