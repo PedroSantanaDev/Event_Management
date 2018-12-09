@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Events.Data;
 
 namespace Events_Management.Models
 {
@@ -26,5 +27,10 @@ namespace Events_Management.Models
 
         [Display(Name = "Is Public?")]
         public bool IsPublic { get; set; }
+
+        internal static object CreateFromEvent(Event eventToEdit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

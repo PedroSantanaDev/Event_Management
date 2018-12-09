@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Events_Management.Controllers
 {
+    [ValidateInput(false)]
     public class BaseController : Controller
     {
         protected ApplicationDbContext db = new ApplicationDbContext();

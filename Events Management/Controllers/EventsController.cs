@@ -48,7 +48,65 @@ namespace Events_Management.Controllers
             }
             return this.View(model);
         }
-        
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var eventToEdit = this.LoadEvent(id);
+            if(eventToEdit == null)
+            {
+                this.AddNotification("Cannot edit event #" + id, NotificationType.ERROR);
+                return this.RedirectToAction("My");
+            }
+
+            var model = EventInputModel.CreateFromEvent(eventToEdit);
+            return this.View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, EventInputModel model)
+        {
+            var eventToEdit = this.LoadEvent(id);
+            if(eventToEdit == null)
+            {
+                this.AddNotification("Cannot edit event #" + id, NotificationType.ERROR);
+                return this.RedirectToAction("My");
+            }
+
+            if(model != null && this.ModelState.IsValid)
+            {
+                eventToEdit.Title = model.Title;
+                eventToEdit.StartDateTime = model.StartDateTime;
+                eventToEdit.Duration = model.Duration;
+                eventToEdit.Description = model.Description;
+                eventToEdit.Location = model.Location;
+                eventToEdit.IsPublic = model.IsPublic;
+
+                this.db.SaveChanges();
+                this.AddNotification("Event Edited.", NotificationType.INFO);
+                return this.RedirectToAction("My");
+            }
+
+            return this.View(model);
+        }
+
+        /// <summary>
+        /// Loads an event by id
+        /// </summary>
+        /// <param name="id">Event id</param>
+        /// <returns>An event</returns>
+        private Event LoadEvent(int id)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+            var isAdmin = this.IsAdmin();          
+            var eventToEdit = this.db.Events
+                .Where(e => e.Id == id)
+                .FirstOrDefault(e => e.AuthorId == currentUserId || isAdmin);
+
+            return eventToEdit;
+        }
+
         public ActionResult My()
         {
 
