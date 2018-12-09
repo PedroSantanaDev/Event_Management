@@ -21,7 +21,7 @@ namespace Events_Management.Models
                 {
                     Id = e.Id,
                     Description = e.Description,
-                    Comments = e.Comments.AsQueryable().Select(CommentViewModel),
+                    Comments = e.Comments.AsQueryable().Select(CommentViewModel.ViewModel),
                 };
             }
         }
