@@ -61,6 +61,7 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\DbMigrationsConfig.cs" />
   </ItemGroup>
   <ItemGroup>
